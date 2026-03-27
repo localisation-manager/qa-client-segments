@@ -1374,10 +1374,10 @@ Object.assign(SEG_LABELS, {
 });
 
 Object.assign(SEG_NOTES, {
-  '%{numOp}':     'Operator for number fields (e.g. number of appointments, total spend). 6 variants.',
-  '%{dateOp}':    'Operator for date fields (e.g. added date, appointment date). 6 variants.',
-  '%{strOp}':     'Operator for text fields (e.g. email, phone, name). 6 variants.',
-  '%{catOp}':     'Operator for categorical / multi-select fields (e.g. tags, services). 5 variants.',
+  '%{numOp}':     'Operator for number fields (e.g. total spend, number of appointments). 6 variants.',
+  '%{dateOp}':    'Operator for date fields (e.g. last appointment date, birthday). 6 variants.',
+  '%{strOp}':     'Operator for text fields (e.g. phone number, email). 6 variants.',
+  '%{catOp}':     'Operator for categorical / multi-select fields (e.g. appointment status, membership status). 5 variants.',
   '%{fromLbl}':   'Visually hidden lower-bound label. Shows when operator is "is between".',
   '%{toLbl}':     'Visually hidden upper-bound label. Shows when operator is "is between".',
   '%{unitLbl}':   'Visually hidden unit dropdown label. Shows with "is in the last" / "is in the next".',
@@ -1388,32 +1388,32 @@ Object.assign(SEG_NOTES, {
 
 Object.assign(SEG_VALUES, {
   '%{numOp}': [
-    { label: 'is less than',   hasVar: false },
-    { label: 'is exactly',     hasVar: false },
-    { label: 'is between',     hasVar: false },
-    { label: 'is more than',   hasVar: false },
-    { label: 'is at least',    hasVar: false },
-    { label: 'is at most',     hasVar: false },
+    { label: 'is less than',   hasVar: false, example: '100' },
+    { label: 'is exactly',     hasVar: false, example: '0' },
+    { label: 'is between',     hasVar: false, example: '50', exampleAfter: '200' },
+    { label: 'is more than',   hasVar: false, example: '3' },
+    { label: 'is at least',    hasVar: false, example: '5' },
+    { label: 'is at most',     hasVar: false, example: '10' },
   ],
   '%{dateOp}': [
     { label: 'is in the past',   hasVar: false },
-    { label: 'is in the last',   hasVar: false },
-    { label: 'is on',            hasVar: false },
-    { label: 'is between',       hasVar: false },
-    { label: 'is in the next',   hasVar: false },
+    { label: 'is in the last',   hasVar: false, example: '6 months' },
+    { label: 'is on',            hasVar: false, example: 'Jan 1 2025' },
+    { label: 'is between',       hasVar: false, example: 'Jan 1 2025', exampleAfter: 'Mar 31 2025' },
+    { label: 'is in the next',   hasVar: false, example: '30 days' },
     { label: 'is in the future', hasVar: false },
   ],
   '%{strOp}': [
-    { label: 'is',               hasVar: false },
-    { label: 'is not',           hasVar: false },
+    { label: 'is',               hasVar: false, example: '+44' },
+    { label: 'is not',           hasVar: false, example: '+44' },
     { label: 'is empty',         hasVar: false },
     { label: 'is not empty',     hasVar: false },
-    { label: 'contains',         hasVar: false },
-    { label: 'does not contain', hasVar: false },
+    { label: 'contains',         hasVar: false, example: '"+44"' },
+    { label: 'does not contain', hasVar: false, example: '"+44"' },
   ],
   '%{catOp}': [
-    { label: 'is',           hasVar: false },
-    { label: 'is not',       hasVar: false },
+    { label: 'is',           hasVar: false, example: 'completed' },
+    { label: 'is not',       hasVar: false, example: 'active' },
     { label: 'is empty',     hasVar: false },
     { label: 'is not empty', hasVar: false },
     { label: 'is any',       hasVar: false },
@@ -1431,49 +1431,35 @@ TEMPLATES.push(
     name: 'Number operator',
     color: '#6950F3',
     section: 'custom',
-    template: '%{ruleConn} [metric] %{numOp} [value]',
-    vars: ['%{ruleConn}', '%{numOp}'],
-  },
-  {
-    name: 'Number range',
-    color: '#6950F3',
-    section: 'custom',
-    template: '%{ruleConn} [metric] is between %{fromLbl} [x] %{toLbl} [y]',
-    vars: ['%{ruleConn}', '%{fromLbl}', '%{toLbl}'],
+    template: '%{ruleConn} any appointment %{whereConn} total spend %{numOp}',
+    vars: ['%{ruleConn}', '%{whereConn}', '%{numOp}'],
   },
   {
     name: 'Date operator',
     color: '#2370EC',
     section: 'custom',
-    template: '%{ruleConn} [attribute] %{dateOp} [value]',
-    vars: ['%{ruleConn}', '%{dateOp}'],
-  },
-  {
-    name: 'Date in the last',
-    color: '#2370EC',
-    section: 'custom',
-    template: '%{ruleConn} [attribute] is in the last [n] %{unitLbl}',
-    vars: ['%{ruleConn}', '%{unitLbl}'],
+    template: '%{ruleConn} no appointment %{whereConn} last appointment date %{dateOp}',
+    vars: ['%{ruleConn}', '%{whereConn}', '%{dateOp}'],
   },
   {
     name: 'Text operator',
     color: '#1F8900',
     section: 'custom',
-    template: '%{ruleConn} [attribute] %{strOp} [value]',
-    vars: ['%{ruleConn}', '%{strOp}'],
+    template: '%{ruleConn} any client %{whereConn} phone number %{strOp}',
+    vars: ['%{ruleConn}', '%{whereConn}', '%{strOp}'],
   },
   {
     name: 'Categorical operator',
     color: '#B7570B',
     section: 'custom',
-    template: '%{ruleConn} [attribute] %{catOp} [values]',
-    vars: ['%{ruleConn}', '%{catOp}'],
+    template: '%{ruleConn} any appointment %{whereConn} appointment status %{catOp}',
+    vars: ['%{ruleConn}', '%{whereConn}', '%{catOp}'],
   },
   {
     name: 'Multi-condition',
     color: '#0D9488',
     section: 'custom',
-    template: '%{ruleConn} [attr] [op] [val] %{whereConn} [attr] [op] [val] %{andConn} [attr] [op] [val]',
+    template: '%{ruleConn} any appointment %{whereConn} scheduled date is in the future %{andConn} team member is Abigail Jones',
     vars: ['%{ruleConn}', '%{whereConn}', '%{andConn}'],
   }
 );
@@ -1546,7 +1532,9 @@ function renderSentenceDisplay(tmpl) {
       const col = SEG_COLORS[match] || { bg:'#333',text:'#ccc',bar:'#888' };
       const val = (SEG_VALUES[match]||[])[selections[match]||0];
       if (!val || val.blank) return '';
-      return `<span class="seg-chip" style="background:${col.bg};color:${col.text};border-color:${col.bar}40">${val.label}</span>`;
+      let exSuffix = val.example ? `<span style="opacity:.5;font-style:italic;margin-left:6px">${val.example}</span>` : '';
+      if (val.exampleAfter) exSuffix += `<span style="opacity:.5;margin-left:6px">and</span><span style="opacity:.5;font-style:italic;margin-left:6px">${val.exampleAfter}</span>`;
+      return `<span class="seg-chip" style="background:${col.bg};color:${col.text};border-color:${col.bar}40">${val.label}</span>${exSuffix}`;
     }
     if (part.trim()) return `<span>${part}</span>`;
     return '';
