@@ -1162,6 +1162,42 @@ const NEW_STRINGS = {
     { text: 'From', id: 10903233 },
     { text: 'To',   id: 10903235 },
   ],
+  'Segment condition: Appointments': [
+    { text: 'Scheduled date',     url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048051' },
+    { text: 'Creation date',      url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048049' },
+    { text: 'Service',            url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816529' },
+    { text: 'Team member',        url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816531' },
+    { text: 'Location',           url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816527' },
+    { text: 'Appointment status', url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816525' },
+    { text: 'Appointment channel',url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816523' },
+  ],
+  'Segment condition: Sales': [
+    { text: 'Sale date',       url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048071' },
+    { text: 'Location',        url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816549' },
+    { text: 'Team member',     url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816559' },
+    { text: 'Item type',       url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816547' },
+    { text: 'Service name',    url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816555' },
+    { text: 'Product name',    url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816553' },
+    { text: 'Membership name', url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816551' },
+    { text: 'Status',          url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816557' },
+  ],
+  'Segment condition: Memberships': [
+    { text: 'Membership name',          url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816535' },
+    { text: 'Membership status',        url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816537' },
+    { text: 'Membership expiry date',   url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048059' },
+    { text: 'Membership purchase date', url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048061' },
+    { text: 'Membership sale value',    url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048063' },
+  ],
+  'Segment condition: Gift cards': [
+    { text: 'Gift card amount',        url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048053' },
+    { text: 'Gift card expiry date',   url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048055' },
+    { text: 'Gift card purchase date', url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048057' },
+    { text: 'Gift card status',        url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816533' },
+  ],
+  'Segment condition: Rewards': [
+    { text: 'Reward status',      url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#13816545' },
+    { text: 'Reward expiry date', url: 'https://fresha.crowdin.com/editor/25/136837/en-?view=comfortable#11048069' },
+  ],
 };
 
 const NEW_STRING_URL = (id) => `https://fresha.crowdin.com/editor/25/162763/en-/2223?view=comfortable&filter=basic&value=1#${id}`;
@@ -1264,6 +1300,11 @@ const SEG_VALUES = {
 };
 
 const NEW_TEMPLATES = [
+  { name: 'Segment condition: Appointments', color: '#2370EC', group: 'Segment condition: Appointments', note: 'Attribute dropdown options when the metric is appointment-based.' },
+  { name: 'Segment condition: Sales',        color: '#B7570B', group: 'Segment condition: Sales',        note: 'Attribute dropdown options when the metric is sales-based.' },
+  { name: 'Segment condition: Memberships',  color: '#6950F3', group: 'Segment condition: Memberships',  note: 'Attribute dropdown options when the metric is membership-based.' },
+  { name: 'Segment condition: Gift cards',   color: '#1F8900', group: 'Segment condition: Gift cards',   note: 'Attribute dropdown options when the metric is gift card-based.' },
+  { name: 'Segment condition: Rewards',      color: '#D4163A', group: 'Segment condition: Rewards',      note: 'Attribute dropdown options when the metric is reward-based.' },
   { name: 'Range input labels',  color: '#d97706', group: 'Segment range input label',  note: 'Used as field labels inside numeric or date range inputs. Not part of the sentence — these are form labels.' },
 ];
 
@@ -1647,7 +1688,7 @@ function selectRefCard(i) {
     'and': 'Connector between conditions / rules',
   };
   document.getElementById('string-rows').innerHTML = strings.map(s => {
-    const url = ALL_CROWDIN(s.text);
+    const url = s.url || ALL_CROWDIN(s.text);
     const usage = USAGE_MAP[s.text] || '';
     return `
       <div class="string-card">
