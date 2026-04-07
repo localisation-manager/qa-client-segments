@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 @layer base, ion, ion-utils;
- 
+
 :root, [data-theme='dark'] {
   --foreground-neutral: #F5F5F5;
   --foreground-neutral-faded: #BFBFBF;
@@ -100,7 +100,7 @@
   --shadow-elevated: 0 2px 8px 0 rgba(0,0,0,.32), 0 4px 20px 0 rgba(0,0,0,.48);
   --shadow-base: 0 2px 4px 0 rgba(0,0,0,.24);
 }
- 
+
 @layer ion-utils {
   .fg-neutral { color: var(--foreground-neutral); }
   .fg-neutral-faded { color: var(--foreground-neutral-faded); }
@@ -401,46 +401,46 @@
     transition-timing-function: ease-out;
     will-change: scale;
   }
- 
+
   /* RAC pressed */
   .ion-button-base[data-pressed] {
     scale: 0.95;
   }
- 
+
   /* Vanilla pressed */
   .ion-button-base:not([data-rac]):active:not(:disabled) {
     scale: 0.95;
   }
- 
+
   /* RAC disabled */
   .ion-button-base[data-disabled] {
     cursor: not-allowed;
     transition: none;
   }
- 
+
   /* Vanilla disabled */
   .ion-button-base:not([data-rac]):disabled {
     cursor: not-allowed;
     transition: none;
   }
- 
+
   /* RAC focus-visible */
   .ion-button-base[data-focus-visible] {
     outline: 2px auto var(--foreground-neutral);
     outline-offset: 4px;
   }
- 
+
   /* Vanilla focus-visible */
   .ion-button-base:not([data-rac]):focus-visible {
     outline: 2px auto var(--foreground-neutral);
     outline-offset: 4px;
   }
- 
+
   .ion-button-base:focus:not([data-focus-visible]):not(:focus-visible) {
     outline: none;
   }
 }
- 
+
 @layer ion {
   .ion-btn {
     font-family: var(--ion-font-body, sans-serif);
@@ -448,42 +448,42 @@
     white-space: nowrap;
     text-decoration: none;
   }
- 
+
   .ion-btn-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
- 
+
   .ion-btn[data-size="s"] .ion-btn-icon {
     width: 16px;
     height: 16px;
   }
- 
+
   .ion-btn[data-size="m"] .ion-btn-icon {
     width: 20px;
     height: 20px;
   }
- 
+
   .ion-btn[data-size="l"] .ion-btn-icon {
     width: 24px;
     height: 24px;
   }
- 
+
   /* --- Vanilla button visual variant states (hover / active / disabled) --- */
- 
+
   /* Primary */
   .ion-button-base[data-visual="primary"]:not([data-rac]):hover:not(:disabled) {
     background-color: var(--background-primary-hover);
   }
- 
+
   .ion-button-base[data-visual="primary"]:not([data-rac]):active:not(
       :disabled
     ) {
     background-color: var(--background-primary-active);
   }
- 
+
   /* Secondary */
   .ion-button-base[data-visual="secondary"]:not([data-rac]):hover:not(
       :disabled
@@ -491,58 +491,58 @@
     background-color: var(--background-base-hover);
     border-color: var(--border-neutral-hover);
   }
- 
+
   .ion-button-base[data-visual="secondary"]:not([data-rac]):active:not(
       :disabled
     ) {
     background-color: var(--background-base-active);
     border-color: var(--border-neutral-active);
   }
- 
+
   /* Tertiary */
   .ion-button-base[data-visual="tertiary"]:not([data-rac]):hover:not(
       :disabled
     ) {
     background-color: var(--background-transparent-hover);
   }
- 
+
   .ion-button-base[data-visual="tertiary"]:not([data-rac]):active:not(
       :disabled
     ) {
     background-color: var(--background-transparent-active);
   }
- 
+
   /* Danger */
   .ion-button-base[data-visual="danger"]:not([data-rac]):hover:not(:disabled) {
     background-color: var(--background-danger-hover);
   }
- 
+
   .ion-button-base[data-visual="danger"]:not([data-rac]):active:not(:disabled) {
     background-color: var(--background-danger-active);
   }
- 
+
   /* Danger Secondary */
   .ion-button-base[data-visual="danger-secondary"]:not([data-rac]):hover:not(
       :disabled
     ) {
     background-color: var(--background-transparent-hover);
   }
- 
+
   .ion-button-base[data-visual="danger-secondary"]:not([data-rac]):active:not(
       :disabled
     ) {
     background-color: var(--background-transparent-active);
   }
- 
+
   /* On Loud */
   .ion-button-base[data-visual="onLoud"]:not([data-rac]):hover:not(:disabled) {
     background-color: var(--background-on-loud-hover);
   }
- 
+
   .ion-button-base[data-visual="onLoud"]:not([data-rac]):active:not(:disabled) {
     background-color: var(--background-on-loud-active);
   }
- 
+
   /* Vanilla disabled (all variants) */
   .ion-button-base:not([data-rac]):disabled {
     background-color: var(--background-disabled);
@@ -558,17 +558,17 @@
     border-style: solid;
     border-width: var(--border-width-1);
   }
- 
+
   .ion-tag-icon {
     display: flex;
     flex-shrink: 0;
   }
- 
+
   .ion-tag[data-size="s"] .ion-tag-icon {
     width: 12px;
     height: 12px;
   }
- 
+
   .ion-tag[data-size="m"] .ion-tag-icon {
     width: 16px;
     height: 16px;
@@ -581,16 +581,16 @@
     justify-content: center;
     white-space: nowrap;
   }
- 
+
   .ion-badge[data-size="s"] {
     overflow: hidden;
   }
- 
+
   /* Ensure pill badge is at least as wide as it is tall (circular for single chars) */
   .ion-badge[data-size="m"] {
     min-inline-size: calc(var(--line-height-xs) + var(--spacing-25) * 2);
   }
- 
+
   .ion-badge-sr-only {
     position: absolute;
     width: 1px;
@@ -616,13 +616,13 @@
     display: flex;
     flex-direction: column;
   }
- 
+
   .ion-nav-list-list {
     list-style: none;
     margin: 0;
     padding: 0;
   }
- 
+
   .ion-nav-list-item {
     display: flex;
     align-items: center;
@@ -632,32 +632,32 @@
     transition-duration: 150ms;
     transition-timing-function: ease-out;
   }
- 
+
   .ion-nav-list-item[data-disabled] {
     cursor: not-allowed;
   }
- 
+
   .ion-nav-list-item[data-focus-visible] {
     outline: 2px auto var(--foreground-neutral);
     outline-offset: 4px;
   }
- 
+
   .ion-nav-list-item:focus-visible {
     outline: 2px auto var(--foreground-neutral);
     outline-offset: 4px;
   }
- 
+
   .ion-nav-list-item:focus:not(:focus-visible) {
     outline: none;
   }
 }
- 
+
 @layer ion {
   .ion-nav-list-item {
     border-radius: var(--radius-s);
     color: var(--foreground-neutral);
   }
- 
+
   /* Size variants via parent data-size */
   .ion-nav-list[data-size="s"] .ion-nav-list-item {
     block-size: var(--size-400);
@@ -665,142 +665,142 @@
     font-size: var(--font-size-xs);
     gap: var(--spacing-50);
   }
- 
+
   .ion-nav-list[data-size="m"] .ion-nav-list-item {
     block-size: var(--size-500);
     padding-inline: var(--spacing-150);
     font-size: var(--font-size-s);
     gap: var(--spacing-75);
   }
- 
+
   .ion-nav-list[data-size="l"] .ion-nav-list-item {
     block-size: var(--size-600);
     padding-inline: var(--spacing-200);
     font-size: var(--font-size-m);
     gap: var(--spacing-100);
   }
- 
+
   /* Item states -- data attributes (set by React) */
   .ion-nav-list-item[data-hovered]:not([data-disabled]) {
     background-color: var(--background-base-hover);
   }
- 
+
   .ion-nav-list-item[data-pressed]:not([data-disabled]) {
     background-color: var(--background-base-active);
   }
- 
+
   .ion-nav-list-item[data-current] {
     background-color: var(--background-primary-faded);
     font-weight: var(--font-weight-semibold);
   }
- 
+
   .ion-nav-list-item[data-current][data-hovered]:not([data-disabled]) {
     background-color: var(--background-base-hover);
   }
- 
+
   .ion-nav-list-item[data-disabled] {
     color: var(--foreground-disabled);
   }
- 
+
   /* Item states -- vanilla pseudo-class fallback (for contract visual tests / HTML-only) */
   .ion-nav-list:not([data-rac]) .ion-nav-list-item:hover:not([data-disabled]) {
     background-color: var(--background-base-hover);
   }
- 
+
   .ion-nav-list:not([data-rac]) .ion-nav-list-item:active:not([data-disabled]) {
     background-color: var(--background-base-active);
   }
- 
+
   .ion-nav-list:not([data-rac]) .ion-nav-list-item[aria-current="page"] {
     background-color: var(--background-primary-faded);
     font-weight: var(--font-weight-semibold);
   }
- 
+
   .ion-nav-list:not([data-rac]) .ion-nav-list-item[aria-disabled="true"] {
     color: var(--foreground-disabled);
   }
- 
+
   /* NavListTitle */
   .ion-nav-list-title {
     color: var(--foreground-neutral);
     font-weight: var(--font-weight-semibold);
     margin-block-end: var(--spacing-50);
   }
- 
+
   .ion-nav-list[data-size="s"] .ion-nav-list-title {
     font-size: var(--font-size-s);
     padding-inline: var(--spacing-100);
   }
- 
+
   .ion-nav-list[data-size="m"] .ion-nav-list-title {
     font-size: var(--font-size-m);
     padding-inline: var(--spacing-150);
   }
- 
+
   .ion-nav-list[data-size="l"] .ion-nav-list-title {
     font-size: var(--font-size-l);
     padding-inline: var(--spacing-200);
   }
- 
+
   /* Section heading */
   .ion-nav-list-section-heading {
     color: var(--foreground-neutral-faded);
     font-size: var(--font-size-xs);
     padding-block: var(--spacing-50);
   }
- 
+
   .ion-nav-list[data-size="s"] .ion-nav-list-section-heading {
     padding-inline: var(--spacing-100);
   }
- 
+
   .ion-nav-list[data-size="m"] .ion-nav-list-section-heading {
     padding-inline: var(--spacing-150);
   }
- 
+
   .ion-nav-list[data-size="l"] .ion-nav-list-section-heading {
     padding-inline: var(--spacing-200);
   }
- 
+
   /* Section spacing */
   .ion-nav-list-section {
     margin-block: var(--spacing-100);
   }
- 
+
   .ion-nav-list-section:first-child {
     margin-block-start: 0;
   }
- 
+
   /* Section nested list */
   .ion-nav-list-section-list {
     list-style: none;
     margin: 0;
     padding: 0;
   }
- 
+
   /* Footer */
   .ion-nav-list-footer {
     color: var(--foreground-neutral-faded);
     font-size: var(--font-size-xs);
     padding-block-start: var(--spacing-100);
   }
- 
+
   .ion-nav-list[data-size="s"] .ion-nav-list-footer {
     padding-inline: var(--spacing-100);
   }
- 
+
   .ion-nav-list[data-size="m"] .ion-nav-list-footer {
     padding-inline: var(--spacing-150);
   }
- 
+
   .ion-nav-list[data-size="l"] .ion-nav-list-footer {
     padding-inline: var(--spacing-200);
   }
 }
- 
- 
+
+
 /* ── button: allow text wrapping ── */
 .ion-btn { white-space: normal; text-align: center; }
- 
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: var(--ion-font-body);
@@ -810,7 +810,7 @@ body {
   display: flex;
   flex-direction: column;
 }
- 
+
 .topbar {
   background: var(--background-base);
   border-bottom: 1px solid var(--border-neutral-faded);
@@ -824,7 +824,7 @@ body {
 .topbar-title { font-size: var(--font-size-s); font-weight: var(--font-weight-semibold); }
 .topbar-sep { color: var(--border-neutral-faded); }
 .topbar-sub { font-size: var(--font-size-xs); color: var(--foreground-neutral-faded); font-family: var(--ion-font-mono); }
- 
+
 .layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -832,7 +832,7 @@ body {
   overflow: hidden;
   height: calc(100vh - var(--size-700));
 }
- 
+
 .sidebar {
   background: var(--background-base);
   border-right: 1px solid var(--border-neutral-faded);
@@ -855,9 +855,9 @@ body {
   background: var(--border-neutral-faded);
   margin: var(--spacing-75) var(--spacing-150);
 }
- 
+
 .content { overflow-y: auto; display: flex; flex-direction: column; }
- 
+
 .sentence-bar {
   background: var(--background-elevated);
   border-bottom: 1px solid var(--border-neutral-faded);
@@ -912,7 +912,7 @@ body {
   padding: 0 var(--spacing-50);
   border-radius: var(--radius-xs);
 }
- 
+
 .right-area {
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -953,7 +953,7 @@ body {
 }
 .option-btn:hover { background: var(--background-base-hover); color: var(--foreground-neutral); }
 .option-btn.selected { color: var(--foreground-neutral); font-weight: var(--font-weight-medium); }
- 
+
 .breakdown {
   overflow-y: auto;
   padding: var(--spacing-300);
@@ -969,7 +969,7 @@ body {
   letter-spacing: 0.06em;
   margin-bottom: var(--spacing-50);
 }
- 
+
 .string-card {
   background: var(--background-elevated);
   border: 1px solid var(--border-neutral-faded);
@@ -1005,7 +1005,7 @@ body {
 </style>
 </head>
 <body>
- 
+
 <header class="topbar">
   <span class="topbar-title">Segment Sentence Composer</span>
   <span class="topbar-sep">·</span>
@@ -1016,7 +1016,7 @@ body {
        data-size="s" data-visual="secondary">Open Crowdin ↗</a>
   </span>
 </header>
- 
+
 <div class="layout">
   <nav class="sidebar">
     <span class="sidebar-section-label">Standard segments</span>
@@ -1028,7 +1028,7 @@ body {
     <span class="sidebar-section-label">String reference</span>
     <ul class="ion-nav-list-list" id="ref-grid" style="list-style:none;padding:0;margin:0"></ul>
   </nav>
- 
+
   <div style="display:flex;flex-direction:column;overflow:hidden">
     <div class="sentence-bar">
       <div class="sentence-meta">
@@ -1043,7 +1043,7 @@ body {
       </div>
       <div class="sentence-text" id="sentence-display"></div>
     </div>
- 
+
     <div class="right-area">
       <div class="options-panel" id="options-panel"></div>
       <div class="breakdown">
@@ -1053,11 +1053,11 @@ body {
     </div>
   </div>
 </div>
- 
+
 <script>
- 
+
 const CROWDIN_EDITOR = (fileId) => `https://fresha.crowdin.com/editor/25/${fileId}/en-/2223?view=comfortable`;
- 
+
 // Exact Crowdin file IDs per string, from original Excel hyperlinks
 const CROWDIN_LINKS = {
   '%{employeeCount} team members': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729362',
@@ -1065,10 +1065,10 @@ const CROWDIN_LINKS = {
   '%{salesCount} or more sales': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729348',
   '%{serviceCount} services': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729358',
   '1 or more sale': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729348',
-  'Any location': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3728900',
-  'Any service': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3728914',
+  'Any location': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3728900',
+  'Any service': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3728914',
   'Any service, product, gift card or membership': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729102',
-  'Any team member': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3728892',
+  'Any team member': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3728892',
   'Clients added %{timeSegment}%{futureAppointmentsSegment}': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729380',
   'Clients added in': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729160',
   'Clients who': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729060',
@@ -1078,14 +1078,14 @@ const CROWDIN_LINKS = {
   'Clients with %{salesCountSegment} %{timeSegment}, who spent %{minimumAmountSpentSegment} and booked %{servicesSegment} at %{locationSegment} with %{employeeSegment}%{futureAppointmentsSegment}': 'https://fresha.crowdin.com/editor/25/80659/en-/2223?view=comfortable&filter=basic&value=1#5297267',
   'Clients with appointments %{timeSegment}, who booked %{servicesSegment} at %{locationSegment} with %{employeeSegment}%{futureAppointmentsSegment}': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3728666',
   'Clients with appointments in': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729080',
-  'Clients with at least': 'https://fresha.crowdin.com/editor/25/58510/en-?view=comfortable&filter=basic&value=1#3723218',
+  'Clients with at least': 'https://fresha.crowdin.com/editor/25/58510/en-/2223?view=comfortable&filter=basic&value=1#3723218',
   'Clients with sales %{timeSegment}, who %{minimumAmountSpentSegment} and purchased %{saleTargetSegment} at %{locationSegment}%{futureAppointmentsSegment}': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3728668',
   'Clients with sales in': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729094',
   'Clients with the last appointment in': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729170',
   'Clients with their last appointment %{timeSegment} who booked %{servicesSegment} at %{locationSegment} with %{employeeSegment}%{futureAppointmentsSegment}': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3728658',
   'Custom dates': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729078',
-  'Date from': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3729082',
-  'Date to': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3729086',
+  'Date from': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729082',
+  'Date to': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729086',
   'Gift cards': 'https://fresha.crowdin.com/editor/25/16746/en-/2223?view=comfortable&filter=basic&value=1#2053935',
   'Last 30 days': 'https://fresha.crowdin.com/editor/25/52278/en-/2223?view=comfortable&filter=basic&value=1#3189480',
   'Last 7 days': 'https://fresha.crowdin.com/editor/25/52278/en-/2223?view=comfortable&filter=basic&value=1#3189484',
@@ -1094,18 +1094,18 @@ const CROWDIN_LINKS = {
   'Previously booked an appointment online': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729056',
   'Selected memberships': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729106',
   'Selected products': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729104',
-  'Selected services': 'https://fresha.crowdin.com/editor/25/58518/en-?view=comfortable&filter=basic&value=1#3723906',
-  'Selected team members': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3728894',
+  'Selected services': 'https://fresha.crowdin.com/editor/25/58518/en-/2223?view=comfortable&filter=basic&value=1#3723906',
+  'Selected team members': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3728894',
   'and booked': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729062',
-  'and booked at': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3728898',
+  'and booked at': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3728898',
   'and purchased': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729098',
   'and with no upcoming appointments': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729368',
-  'any amount': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3729090',
+  'any amount': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729090',
   'any location': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729364',
   'any service': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729356',
   'any service, product, gift card or membership': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729370',
   'any team member': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729360',
-  'at least': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3729092',
+  'at least': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729092',
   'at least %{amount}': 'https://fresha.crowdin.com/editor/25/80659/en-/2223?view=comfortable&filter=basic&value=1#5297263',
   'between %{dateFrom} and %{dateTo}': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729342',
   'gift cards': 'https://fresha.crowdin.com/editor/25/58478/en-/2223?view=comfortable&filter=basic&value=1#3722462',
@@ -1126,12 +1126,12 @@ const CROWDIN_LINKS = {
   'selected memberships': 'https://fresha.crowdin.com/editor/25/21698/en-/2223?view=comfortable&filter=basic&value=1#1499984',
   'selected products': 'https://fresha.crowdin.com/editor/25/21698/en-/2223?view=comfortable&filter=basic&value=1#1499986',
   'selected services': 'https://fresha.crowdin.com/editor/25/21698/en-/2223?view=comfortable&filter=basic&value=1#1499988',
-  'who booked': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3728896',
+  'who booked': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3728896',
   'who did not return in the last': 'https://fresha.crowdin.com/editor/25/58510/en-/2223?view=comfortable&filter=basic&value=1#3723228',
-  'who spent': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3729096',
-  'within the last': 'https://fresha.crowdin.com/editor/25/58614/en-?view=comfortable&filter=basic&value=1#3729142',
+  'who spent': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729096',
+  'within the last': 'https://fresha.crowdin.com/editor/25/58614/en-/2223?view=comfortable&filter=basic&value=1#3729142',
 };
- 
+
 // New strings: custom segment rule builder (file 162763)
 const NEW_STRINGS = {
   'Segment condition operator': [
@@ -1163,11 +1163,11 @@ const NEW_STRINGS = {
     { text: 'To',   id: 10903235 },
   ],
 };
- 
+
 const NEW_STRING_URL = (id) => `https://fresha.crowdin.com/editor/25/162763/en-/2223?view=comfortable&filter=basic&value=1#${id}`;
- 
+
 const CROWDIN_URL = (label) => CROWDIN_LINKS[label] || CROWDIN_LINKS[label.toLowerCase()] || 'https://fresha.crowdin.com/u/projects/25';
- 
+
 const SEG_COLORS = {
   "%{timeSegment}":                   { bg: "#ede9fe", text: "#6d28d9", bar: "#7c3aed" },
   "%{futureAppointmentsSegment}":     { bg: "#fef3c7", text: "#92400e", bar: "#d97706" },
@@ -1180,7 +1180,7 @@ const SEG_COLORS = {
   "%{previouslyBookedOnlineSegment}": { bg: "#f1f5f9", text: "#334155", bar: "#64748b" },
   "%{saleTargetSegment}":             { bg: "#e6f0ff", text: "#1e3a8a", bar: "#1565c0" },
 };
- 
+
 const SEG_LABELS = {
   "%{timeSegment}":                   "time",
   "%{futureAppointmentsSegment}":     "future appointments",
@@ -1193,7 +1193,7 @@ const SEG_LABELS = {
   "%{previouslyBookedOnlineSegment}": "booked online",
   "%{saleTargetSegment}":             "sale target",
 };
- 
+
 const SEG_NOTES = {
   "%{timeSegment}":                   "13 variants: past/future ranges. Appears mid-sentence.",
   "%{futureAppointmentsSegment}":     "Optional suffix. Blank = no filter. If selected, appends to end of sentence.",
@@ -1206,7 +1206,7 @@ const SEG_NOTES = {
   "%{previouslyBookedOnlineSegment}": "Fixed phrase — 1 variant only.",
   "%{saleTargetSegment}":             "Follows 'purchased'. 5 variants.",
 };
- 
+
 const SEG_VALUES = {
   "%{timeSegment}": [
     { label: "in the last day", hasVar: false },
@@ -1262,11 +1262,11 @@ const SEG_VALUES = {
     { label: "gift cards", hasVar: false },
   ],
 };
- 
+
 const NEW_TEMPLATES = [
   { name: 'Range input labels',  color: '#d97706', group: 'Segment range input label',  note: 'Used as field labels inside numeric or date range inputs. Not part of the sentence — these are form labels.' },
 ];
- 
+
 const TEMPLATES = [
   {
     name: "New clients",
@@ -1281,6 +1281,12 @@ const TEMPLATES = [
     vars: ["%{timeSegment}", "%{servicesSegment}", "%{locationSegment}", "%{employeeSegment}", "%{futureAppointmentsSegment}"],
   },
   {
+    name: "First visit clients",
+    color: "#0ea5e9",
+    template: "Clients with no appointments in the past, and with appointments in the future",
+    vars: [],
+  },
+  {
     name: "Loyal clients",
     color: "#d97706",
     template: "Clients with %{salesCountSegment} %{timeSegment}, who spent %{minimumAmountSpentSegment} and booked %{servicesSegment} at %{locationSegment} with %{employeeSegment}%{futureAppointmentsSegment}",
@@ -1291,6 +1297,18 @@ const TEMPLATES = [
     color: "#e53935",
     template: "Clients with %{salesCountSegment} %{timeSegment}, who booked %{servicesSegment} at %{locationSegment} with %{employeeSegment} and did not return %{notReturnedInTimeSegment}",
     vars: ["%{salesCountSegment}", "%{timeSegment}", "%{servicesSegment}", "%{locationSegment}", "%{employeeSegment}", "%{notReturnedInTimeSegment}"],
+  },
+  {
+    name: "High spenders",
+    color: "#8b5cf6",
+    template: "Clients with more than %{minimumAmountSpentSegment} in sales %{timeSegment}",
+    vars: ["%{minimumAmountSpentSegment}", "%{timeSegment}"],
+  },
+  {
+    name: "Birthday clients",
+    color: "#ec4899",
+    template: "Clients with birthdays %{timeSegment}",
+    vars: ["%{timeSegment}"],
   },
   {
     name: "Client by channel",
@@ -1311,7 +1329,7 @@ const TEMPLATES = [
     vars: ["%{timeSegment}", "%{minimumAmountSpentSegment}", "%{saleTargetSegment}", "%{locationSegment}", "%{futureAppointmentsSegment}"],
   },
 ];
- 
+
 // ── Custom builder Crowdin links (correct /all/ URL) ─────────────────────
 const CUSTOM_CROWDIN = {
   'is less than':     'https://fresha.crowdin.com/editor/25/162763/en-/2223?view=comfortable#10903193',
@@ -1336,13 +1354,104 @@ const CUSTOM_CROWDIN = {
   'Unit':             'https://fresha.crowdin.com/editor/25/162763/en-/2223?view=comfortable#10903231',
   'From':             'https://fresha.crowdin.com/editor/25/162763/en-/2223?view=comfortable#10903233',
   'To':               'https://fresha.crowdin.com/editor/25/162763/en-/2223?view=comfortable#10903235',
+  // Segment metrics (Select type dropdown)
+  'Number of appointments': 'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#11048081',
+  'Added date':             'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#11048085',
+  'Phone number':           'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#11048097',
+  'Email address':          'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#11048091',
+  'Birthday':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#11048089',
+  'Age':                    'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#11048087',
+  'Gender':                 'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816639',
+  'Pronouns':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816647',
+  'Client source':          'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816635',
+  'Preferred language':     'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816645',
+  'Country':                'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816637',
+  'Tags':                   'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816649',
+  'Loyalty points':         'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#11048093',
+  'Loyalty tier':           'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816643',
+  'Loyalty status':         'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816641',
+  'Rewards':                'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#14051789',
+  'Memberships':            'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#14051787',
+  // Segment conditions (sub-condition attributes)
+  'Appointment value':      'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#14051781',
+  'Scheduled date':         'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#11048051',
+  'Creation date':          'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#11048049',
+  'Service':                'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880703',
+  'Team member':            'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816559',
+  'Location':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816549',
+  'Appointment status':     'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816525',
+  'Appointment channel':    'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816523',
+  // Time units (unit selector)
+  'Days':                   'https://fresha.crowdin.com/editor/25/162763/en-/2223?view=comfortable#13865377',
+  'Weeks':                  'https://fresha.crowdin.com/editor/25/162763/en-/2223?view=comfortable#13865379',
+  'Months':                 'https://fresha.crowdin.com/editor/25/162763/en-/2223?view=comfortable#13865311',
+  'Years':                  'https://fresha.crowdin.com/editor/25/143113/en-/2223?view=comfortable#9103167',
+  // Segment entities
+  'a gift card':            'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816567',
+  'a membership':           'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816569',
+  'a package':              'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816571',
+  'a phone number':         'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816573',
+  'an email address':       'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816575',
+  'appointments':           'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816577',
+  'gift cards':             'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816579',
+  'memberships':            'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816581',
+  'packages':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816583',
+  'rewards':                'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816585',
+  'sales':                  'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816587',
+  // Segment filter fields (lowercase, entity-level sub-conditions)
+  'channel':                'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816621',
+  'item':                   'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816623',
+  'location':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816625',
+  'product':                'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816627',
+  'service':                'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880703',
+  'status':                 'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816631',
+  'team member':            'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816633',
+  'expiry date':            'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880087',
+  'item type':              'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880089',
+  'locations':              'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880091',
+  'name':                   'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880093',
+  'products':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880095',
+  'purchase date':          'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880097',
+  'services':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880099',
+  'team members':           'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880101',
+  'value':                  'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880103',
+  'statuses':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13934781',
+  'membership':             'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13991695',
+  'amount':                 'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#14054279',
+  'appointment vaue':       'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#14054281',
+  'sale value':             'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#14054283',
+  'total spent':            'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#14054285',
+  // Segment fields (lowercase, client-level)
+  'age':                    'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816589',
+  'client source':          'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816591',
+  'country':                'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816593',
+  'email address':          'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816595',
+  'gender':                 'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816597',
+  'loyalty points':         'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816599',
+  'loyalty referrals':      'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816601',
+  'loyalty status':         'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816603',
+  'loyalty tier':           'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816605',
+  'phone number':           'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816607',
+  'preferred language':     'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816611',
+  'pronouns':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816611',
+  'referred by':            'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816613',
+  'tags':                   'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13816615',
+  'added date':             'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880057',
+  'birthday':               'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13880059',
+  // Segment time units (singular/plural lowercase)
+  'day':                    'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13991707',
+  'days':                   'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13991709',
+  'month':                  'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13991711',
+  'months':                 'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13991713',
+  'week':                   'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13991715',
+  'weeks':                  'https://fresha.crowdin.com/editor/25/136837/en-/2223?view=comfortable#13991717',
 };
- 
+
 const ALL_CROWDIN = (label) =>
   CROWDIN_LINKS[label] || CROWDIN_LINKS[label.toLowerCase()] ||
   CUSTOM_CROWDIN[label] || CUSTOM_CROWDIN[label.toLowerCase()] ||
   'https://fresha.crowdin.com/u/projects/25';
- 
+
 // ── Custom segment builder segment vars ──────────────────────────────────
 Object.assign(SEG_COLORS, {
   '%{numOp}':     { bg: '#201E45', text: '#8880FF', bar: '#6950F3' },
@@ -1355,8 +1464,16 @@ Object.assign(SEG_COLORS, {
   '%{ruleConn}':  { bg: '#082B26', text: '#23A99D', bar: '#0D9488' },
   '%{whereConn}': { bg: '#082B26', text: '#23A99D', bar: '#0D9488' },
   '%{andConn}':   { bg: '#082B26', text: '#23A99D', bar: '#0D9488' },
+  // Selectable attribute slots for the interactive builder example
+  '%{mainAttr}':  { bg: '#1a1a2e', text: '#e0a0ff', bar: '#9b59b6' },
+  '%{subAttr1}':  { bg: '#1a2e1a', text: '#a0ffa0', bar: '#27ae60' },
+  '%{subAttr2}':  { bg: '#2e1a1a', text: '#ffa0a0', bar: '#e74c3c' },
+  '%{unitSelect}':{ bg: '#2B2660', text: '#B0B1FD', bar: '#6950F3' },
+  '%{entity}':    { bg: '#2d1b4e', text: '#c4b5fd', bar: '#8b5cf6' },
+  '%{filterFld}': { bg: '#1a2332', text: '#93c5fd', bar: '#3b82f6' },
+  '%{segField}':  { bg: '#1f2d1a', text: '#bef264', bar: '#84cc16' },
 });
- 
+
 Object.assign(SEG_LABELS, {
   '%{numOp}':     'number operator',
   '%{dateOp}':    'date operator',
@@ -1368,8 +1485,15 @@ Object.assign(SEG_LABELS, {
   '%{ruleConn}':  'Clients with',
   '%{whereConn}': 'where',
   '%{andConn}':   'and',
+  '%{mainAttr}':  'main attribute (Select type)',
+  '%{subAttr1}':  '1st sub-condition attribute',
+  '%{subAttr2}':  '2nd sub-condition attribute',
+  '%{unitSelect}':'time unit',
+  '%{entity}':    'segment entity',
+  '%{filterFld}': 'filter field',
+  '%{segField}':  'segment field',
 });
- 
+
 Object.assign(SEG_NOTES, {
   '%{numOp}':     'Operator for number fields (e.g. total spend, number of appointments). 6 variants.',
   '%{dateOp}':    'Operator for date fields (e.g. last appointment date, birthday). 6 variants.',
@@ -1381,8 +1505,15 @@ Object.assign(SEG_NOTES, {
   '%{ruleConn}':  'Always opens a rule card. Fixed — 1 variant.',
   '%{whereConn}': 'Introduces the first condition in a rule. Fixed — 1 variant.',
   '%{andConn}':   'Joins each additional condition. Fixed — 1 variant.',
+  '%{mainAttr}':  'First dropdown in a rule — the main attribute to segment by. Appears after "Clients with".',
+  '%{subAttr1}':  'First sub-condition attribute in the "where" clause. Filters the main attribute further.',
+  '%{subAttr2}':  'Second sub-condition attribute joined with "and". Additional filter on the rule.',
+  '%{unitSelect}':'Time unit selector that appears with "is in the last" / "is in the next" operators.',
+  '%{entity}':    'The entity noun after "Clients with" — defines what is being counted/filtered. 11 variants.',
+  '%{filterFld}': 'Lowercase field name used in entity-level sub-conditions (e.g. "where [scheduled date] is in the last…"). 21 variants.',
+  '%{segField}':  'Lowercase field name for client-level conditions. These are the field labels in "where"/"and" clauses for client detail segments. 16 variants.',
 });
- 
+
 Object.assign(SEG_VALUES, {
   '%{numOp}': [
     { label: 'is less than',   hasVar: false, example: '100' },
@@ -1419,52 +1550,128 @@ Object.assign(SEG_VALUES, {
   '%{ruleConn}':  [{ label: 'Clients with', hasVar: false }],
   '%{whereConn}': [{ label: 'where',        hasVar: false }],
   '%{andConn}':   [{ label: 'and',          hasVar: false }],
+  // Main "Select type" attribute dropdown — all items from the video
+  '%{mainAttr}': [
+    { label: 'Number of appointments', hasVar: false },
+    { label: 'total value or sales',   hasVar: false },
+    { label: 'Added date',             hasVar: false },
+    { label: 'Phone number',           hasVar: false },
+    { label: 'Email address',          hasVar: false },
+    { label: 'Birthday',               hasVar: false },
+    { label: 'Age',                    hasVar: false },
+    { label: 'Gender',                 hasVar: false },
+    { label: 'Pronouns',               hasVar: false },
+    { label: 'Client source',          hasVar: false },
+    { label: 'Preferred language',     hasVar: false },
+    { label: 'Country',                hasVar: false },
+    { label: 'Tags',                   hasVar: false },
+    { label: 'Loyalty points',         hasVar: false },
+    { label: 'Loyalty tier',           hasVar: false },
+    { label: 'Loyalty status',         hasVar: false },
+    { label: 'Rewards',                hasVar: false },
+    { label: 'Memberships',            hasVar: false },
+    { label: 'Gift cards',             hasVar: false },
+  ],
+  // "where" / "and" sub-condition attributes — appointment-level filters
+  '%{subAttr1}': [
+    { label: 'Appointment value',   hasVar: false },
+    { label: 'Scheduled date',      hasVar: false },
+    { label: 'Creation date',       hasVar: false },
+    { label: 'Service',             hasVar: false },
+    { label: 'Team member',         hasVar: false },
+    { label: 'Location',            hasVar: false },
+    { label: 'Appointment status',  hasVar: false },
+    { label: 'Appointment channel', hasVar: false },
+  ],
+  '%{subAttr2}': [
+    { label: 'Appointment value',   hasVar: false },
+    { label: 'Scheduled date',      hasVar: false },
+    { label: 'Creation date',       hasVar: false },
+    { label: 'Service',             hasVar: false },
+    { label: 'Team member',         hasVar: false },
+    { label: 'Location',            hasVar: false },
+    { label: 'Appointment status',  hasVar: false },
+    { label: 'Appointment channel', hasVar: false },
+  ],
+  // Time unit for "is in the last" / "is in the next"
+  '%{unitSelect}': [
+    { label: 'Days',   hasVar: false },
+    { label: 'Weeks',  hasVar: false },
+    { label: 'Months', hasVar: false },
+    { label: 'Years',  hasVar: false },
+  ],
+  '%{entity}': [
+    { label: 'appointments',    hasVar: false },
+    { label: 'sales',           hasVar: false },
+    { label: 'a gift card',     hasVar: false },
+    { label: 'a membership',    hasVar: false },
+    { label: 'a package',       hasVar: false },
+    { label: 'a phone number',  hasVar: false },
+    { label: 'an email address',hasVar: false },
+    { label: 'gift cards',      hasVar: false },
+    { label: 'memberships',     hasVar: false },
+    { label: 'packages',        hasVar: false },
+    { label: 'rewards',         hasVar: false },
+  ],
+  '%{filterFld}': [
+    { label: 'channel',         hasVar: false },
+    { label: 'item',            hasVar: false },
+    { label: 'location',        hasVar: false },
+    { label: 'product',         hasVar: false },
+    { label: 'service',         hasVar: false },
+    { label: 'status',          hasVar: false },
+    { label: 'team member',     hasVar: false },
+    { label: 'expiry date',     hasVar: false },
+    { label: 'item type',       hasVar: false },
+    { label: 'locations',       hasVar: false },
+    { label: 'name',            hasVar: false },
+    { label: 'products',        hasVar: false },
+    { label: 'purchase date',   hasVar: false },
+    { label: 'services',        hasVar: false },
+    { label: 'team members',    hasVar: false },
+    { label: 'value',           hasVar: false },
+    { label: 'statuses',        hasVar: false },
+    { label: 'membership',      hasVar: false },
+    { label: 'amount',          hasVar: false },
+    { label: 'sale value',      hasVar: false },
+    { label: 'total spent',     hasVar: false },
+  ],
+  '%{segField}': [
+    { label: 'age',               hasVar: false },
+    { label: 'client source',     hasVar: false },
+    { label: 'country',           hasVar: false },
+    { label: 'email address',     hasVar: false },
+    { label: 'gender',            hasVar: false },
+    { label: 'loyalty points',    hasVar: false },
+    { label: 'loyalty referrals', hasVar: false },
+    { label: 'loyalty status',    hasVar: false },
+    { label: 'loyalty tier',      hasVar: false },
+    { label: 'phone number',      hasVar: false },
+    { label: 'preferred language', hasVar: false },
+    { label: 'pronouns',          hasVar: false },
+    { label: 'referred by',       hasVar: false },
+    { label: 'tags',              hasVar: false },
+    { label: 'added date',        hasVar: false },
+    { label: 'birthday',          hasVar: false },
+  ],
 });
- 
+
 TEMPLATES.push(
   {
-    name: 'Number operator',
-    color: '#6950F3',
+    name: 'Full interactive builder',
+    color: '#9b59b6',
     section: 'custom',
-    template: '%{ruleConn} any appointment %{whereConn} total spend %{numOp}',
-    vars: ['%{ruleConn}', '%{whereConn}', '%{numOp}'],
-  },
-  {
-    name: 'Date operator',
-    color: '#2370EC',
-    section: 'custom',
-    template: '%{ruleConn} no appointment %{whereConn} last appointment date %{dateOp}',
-    vars: ['%{ruleConn}', '%{whereConn}', '%{dateOp}'],
-  },
-  {
-    name: 'Text operator',
-    color: '#1F8900',
-    section: 'custom',
-    template: '%{ruleConn} any client %{whereConn} phone number %{strOp}',
-    vars: ['%{ruleConn}', '%{whereConn}', '%{strOp}'],
-  },
-  {
-    name: 'Categorical operator',
-    color: '#B7570B',
-    section: 'custom',
-    template: '%{ruleConn} any appointment %{whereConn} appointment status %{catOp}',
-    vars: ['%{ruleConn}', '%{whereConn}', '%{catOp}'],
-  },
-  {
-    name: 'Multi-condition',
-    color: '#0D9488',
-    section: 'custom',
-    template: '%{ruleConn} any appointment %{whereConn} scheduled date is in the future %{andConn} team member is Abigail Jones',
-    vars: ['%{ruleConn}', '%{whereConn}', '%{andConn}'],
+    template: '%{ruleConn} %{mainAttr} %{numOp} %{whereConn} %{subAttr1} %{dateOp} %{unitSelect} %{andConn} %{subAttr2} %{catOp}',
+    vars: ['%{ruleConn}', '%{mainAttr}', '%{numOp}', '%{whereConn}', '%{subAttr1}', '%{dateOp}', '%{unitSelect}', '%{andConn}', '%{subAttr2}', '%{catOp}'],
   }
 );
- 
- 
+
+
 // ── State ──────────────────────────────────────────────────────────────────
 let activeTemplate = 0;
 let activeRefCard = -1;
 let selections = {};
- 
+
 function countCombos(tmpl) {
   return tmpl.vars.reduce((acc, v) => acc * (SEG_VALUES[v] || [1]).length, 1);
 }
@@ -1473,7 +1680,7 @@ function initSelections(tmpl) {
   tmpl.vars.forEach(v => { s[v] = 0; });
   return s;
 }
- 
+
 // ── Sidebar ────────────────────────────────────────────────────────────────
 function navItem(name, color, badge, idx, isNew, active) {
   return `<li>
@@ -1486,20 +1693,20 @@ function navItem(name, color, badge, idx, isNew, active) {
     </button>
   </li>`;
 }
- 
+
 function renderSidebar() {
   const stdEnd = TEMPLATES.findIndex(t => t.section === 'custom');
   const stdTemplates = stdEnd === -1 ? TEMPLATES : TEMPLATES.slice(0, stdEnd);
   const custTemplates = stdEnd === -1 ? [] : TEMPLATES.slice(stdEnd);
- 
+
   document.getElementById('seg-type-grid').innerHTML = stdTemplates.map((t, i) =>
     navItem(t.name, t.color, countCombos(t).toLocaleString(), i, false, activeTemplate === i)
   ).join('');
- 
+
   document.getElementById('new-seg-grid').innerHTML = custTemplates.map((t, i) =>
     navItem(t.name, t.color, countCombos(t).toLocaleString(), i, true, activeTemplate === stdEnd + i)
   ).join('');
- 
+
   document.getElementById('ref-grid').innerHTML = NEW_TEMPLATES.map((t, i) => {
     const strings = NEW_STRINGS[t.group] || [];
     const isActive = activeRefCard === i;
@@ -1513,8 +1720,9 @@ function renderSidebar() {
       </button>
     </li>`;
   }).join('');
+
 }
- 
+
 // ── Render helpers ─────────────────────────────────────────────────────────
 function renderOptions(tmpl) {
   document.getElementById('options-panel').innerHTML = tmpl.vars.map(v => {
@@ -1533,7 +1741,7 @@ function renderOptions(tmpl) {
     </div>`;
   }).join('');
 }
- 
+
 function renderSentenceDisplay(tmpl) {
   const parts = tmpl.template.split(/(%\{[^}]+\})/g);
   document.getElementById('sentence-display').innerHTML = parts.map(part => {
@@ -1553,7 +1761,7 @@ function renderSentenceDisplay(tmpl) {
     return '';
   }).join('');
 }
- 
+
 function renderTemplate(tmpl) {
   const parts = tmpl.template.split(/(%\{[^}]+\})/g);
   document.getElementById('template-display').innerHTML = parts.map(part =>
@@ -1562,7 +1770,7 @@ function renderTemplate(tmpl) {
       : `<span>${part}</span>`
   ).join('');
 }
- 
+
 function renderBreakdown(tmpl) {
   document.getElementById('string-rows').innerHTML = tmpl.vars.map(v => {
     const col = SEG_COLORS[v] || { bg:'#333',text:'#ccc',bar:'#888' };
@@ -1596,11 +1804,12 @@ function renderBreakdown(tmpl) {
       </div>`;
   }).join('');
 }
- 
+
 function renderComboCount(tmpl) {
   document.getElementById('combo-badge').textContent = countCombos(tmpl).toLocaleString() + ' combinations';
 }
- 
+
+
 function render() {
   if (activeRefCard >= 0) { selectRefCard(activeRefCard); return; }
   const tmpl = TEMPLATES[activeTemplate];
@@ -1611,35 +1820,35 @@ function render() {
   renderBreakdown(tmpl);
   renderComboCount(tmpl);
 }
- 
+
 function selectTemplate(i) {
   activeTemplate = i;
   activeRefCard = -1;
   selections = initSelections(TEMPLATES[i]);
   render();
 }
- 
+
 function selectRefCard(i) {
   activeRefCard = i;
   activeTemplate = -1;
   const ref = NEW_TEMPLATES[i];
   const strings = NEW_STRINGS[ref.group] || [];
- 
+
   renderSidebar();
- 
+
   // Template bar: show context label
   document.getElementById('template-display').innerHTML =
     `<span class="tvar" style="color:${ref.color}">${ref.group}</span>`;
- 
+
   // Sentence area: show note
   document.getElementById('sentence-display').innerHTML =
     `<span style="color:var(--foreground-neutral-faded)">${ref.note}</span>`;
- 
+
   document.getElementById('combo-badge').textContent = strings.length + ' strings';
- 
+
   // Options: none
   document.getElementById('options-panel').innerHTML = '';
- 
+
   // Breakdown: list all strings with Crowdin links and usage
   const USAGE_MAP = {
     'From': 'Start value of a numeric or date range',
@@ -1666,12 +1875,12 @@ function selectRefCard(i) {
       </div>`;
   }).join('');
 }
- 
+
 function selectCustomTemplate(i) {
   const stdEnd = TEMPLATES.findIndex(t => t.section === 'custom');
   selectTemplate(stdEnd + i);
 }
- 
+
 function selectVal(varName, idx) {
   selections[varName] = idx;
   const tmpl = TEMPLATES[activeTemplate];
@@ -1679,7 +1888,7 @@ function selectVal(varName, idx) {
   renderSentenceDisplay(tmpl);
   renderBreakdown(tmpl);
 }
- 
+
 function copyStr(str, btn) {
   navigator.clipboard.writeText(str).then(() => {
     const orig = btn.textContent;
@@ -1688,9 +1897,8 @@ function copyStr(str, btn) {
     setTimeout(() => { btn.textContent = orig; btn.style.color = ''; }, 1500);
   });
 }
- 
+
 selectTemplate(0);
 </script>
 </body>
 </html>
- 
